@@ -22,7 +22,7 @@ jobs:
         run: javac *.java
 
       - name: Check Formatting and Warnings
-        run: javac -Xlint *.java
+        run: javac -Xlint src/*.java
 
       - name: Review Passed
         run: echo "All checks passed successfully."
