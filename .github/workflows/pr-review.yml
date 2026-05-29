@@ -19,7 +19,7 @@ jobs:
           java-version: '17'
 
       - name: Compile Java Files
-        run: javac *.java
+        run: javac src/*.java
 
       - name: Check Formatting and Warnings
         run: javac -Xlint src/*.java
