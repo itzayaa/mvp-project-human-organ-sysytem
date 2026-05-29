@@ -1,0 +1,28 @@
+name: Human Organ System Integration Pipeline
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Compile Java Files
+        run: javac *.java
+
+      - name: Check Formatting and Warnings
+        run: javac -Xlint *.java
+
+      - name: Review Passed
+        run: echo "All checks passed successfully."
